@@ -13,24 +13,24 @@ describe('Onliner', function() {
 		var mobilePhones =browser.element('span.project-navigation__sign=Мобильные телефоны');
 		mobilePhones.waitForExist(5000);
 		browser.click('span.project-navigation__sign=Мобильные телефоны');
+		var filterApple = browser.element('span.schema-filter__checkbox-text=Apple');
+		filterApple.waitForExist(5000);
+		browser.click('span.schema-filter__checkbox-text=Apple');
+		var phone = browser.element('span=Apple iPhone 6s 16GB Silver');
+		phone.waitForExist(5000);
+		browser.click('div.schema-product__title=Apple iPhone 6s 16GB Silver');
 
 	});
 
 	it('Количество точек матрицы', function() {
-		
-		var logout = browser.element('span.schema-filter__checkbox-text=Apple');
-		logout.waitForExist();
-		browser.click('span.schema-filter__checkbox-text=Apple');
+		var prosessor = browser.getText('span.value__text=12 Мп');
+		expect(prosessor).toBe('12 Мп');
 
 		
 	});
 
 	it('Процессор', function() {
-		var phone = browser.element('span=Apple iPhone 6s 16GB Silver');
-		phone.waitForExist();
-		browser.click('div.schema-product__title=Apple iPhone 6s 16GB Silver');
-		var prosessor = browser.getText('span.value__text=12 Мп');
-		expect(prosessor).toBe('12 Мп');
+
 	});
 
 	it('Сканер отпечатка пальца ', function() {
