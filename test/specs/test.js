@@ -3,7 +3,6 @@ describe('Apple iPhone 6s 16GB Silver', function() {
 
 	beforeAll(function () {
 		browser.url('https://www.onliner.by/');
-
 	});
 
 
@@ -13,18 +12,14 @@ describe('Apple iPhone 6s 16GB Silver', function() {
 		var mobilePhones =browser.element('span.project-navigation__sign=Мобильные телефоны');
 		mobilePhones.waitForExist(5000);
 		browser.click('span.project-navigation__sign=Мобильные телефоны');
-		var filterApple = browser.element('span.schema-filter__checkbox-text=Apple');
-		filterApple.waitForExist(5000);
+		browser.waitForVisible('span.schema-filter__checkbox-text=Apple');
 		browser.click('span.schema-filter__checkbox-text=Apple');
-		var phone = browser.getText('span=Apple iPhone 6s 16GB Silver');
-		browser.waitForVisible(phone);
-		//phone.waitForExist(5000);
+		browser.waitForVisible('span=Apple iPhone 6s 16GB Silver');
 		browser.click('div.schema-product__title=Apple iPhone 6s 16GB Silver');
-
 	});
 
 	it('Количество точек матрицы', function() {
-		var prosessor = browser.getText('span.value__text=12 Мп');
+	//	var prosessor = browser.getText('span.value__text=12 Мп');
 	//	expect(prosessor).toBe('12 Мп');
 
 		
